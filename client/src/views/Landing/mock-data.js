@@ -13,8 +13,8 @@ export const team = [
       'An organism capable of converting caffeine into code or a red-eyed, mumbling mammal capable of conversing with inanimate objects. On a good day I can be both!',
     links: {
       twitter: '#twitter',
-      linkedin: '#linkedin'
-    }
+      linkedin: '#linkedin',
+    },
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ export const team = [
     links: {
       twitter: '#twitter',
       instagram: '#instagram',
-      facebook: '#facebook'
-    }
+      facebook: '#facebook',
+    },
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ export const team = [
     links: {
       googleplus: '#googleplus',
       youtube: '#youtube',
-      twitter: '#twitter'
-    }
+      twitter: '#twitter',
+    },
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export const team = [
     links: {
       googleplus: '#googleplus',
       youtube: '#youtube',
-      twitter: '#twitter'
-    }
-  }
+      twitter: '#twitter',
+    },
+  },
 ];

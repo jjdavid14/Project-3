@@ -56,12 +56,9 @@ class UserProfile extends Component {
       lastname: this.state.lastname
     })
       .then(res => {
-        console.log(res);
         // We update the user held in session storage
         API.getUser({ uid: this.state.user.firebaseId })
           .then(res => {
-            console.log('API returns:');
-            console.log(res);
             sessionStorage.setItem('user', JSON.stringify(res.data[0]));
             this.showNotification("tc");
           })

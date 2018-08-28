@@ -8,16 +8,17 @@
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint .",
     "install": "cd client && yarn install",
     "postinstall": "yarn build",
-    "lint": "eslint ./client/src ./config ./controllers ./models ./routes ./scripts ./test"
+    "lint": "eslint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0",
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "nodemon": "^1.11.0",

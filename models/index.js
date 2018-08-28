@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -22,8 +20,7 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-fs
-  .readdirSync(__dirname)
+fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
       file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'

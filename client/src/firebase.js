@@ -7,7 +7,7 @@ var config = {
   databaseURL: 'https://peak-performance-47127.firebaseio.com',
   projectId: 'peak-performance-47127',
   storageBucket: 'peak-performance-47127.appspot.com',
-  messagingSenderId: '1046043852010'
+  messagingSenderId: '1046043852010',
 };
 firebase.initializeApp(config);
 

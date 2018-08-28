@@ -5,49 +5,49 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     // Giving the Employee model a lastname of type STRING
     lastname: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     // Giving the Employee model an email of type STRING
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isEmail: true
-      }
+        isEmail: true,
+      },
     },
     // Giving the Employee model a company of type STRING
     company: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     // Giving the Employee model a department of type STRING
     department: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     // Giving the Employee model a manager of type STRING
     manager: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
-    }
+        len: [1],
+      },
+    },
   });
 
   Employee.associate = function(models) {
@@ -55,8 +55,8 @@ module.exports = function(sequelize, DataTypes) {
     // An Employee can't be created without a User due to the foreign key constraint
     Employee.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
 
     Employee.hasMany(models.Review);
@@ -67,4 +67,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Employee;
 };
-

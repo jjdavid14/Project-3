@@ -1,0 +1,7 @@
+build/*
+client/build/*
+client/node_modules/*
+
+client/src/registerServiceWorker.js
+client/src/views/Landing/mock-data.js
+.gitignore

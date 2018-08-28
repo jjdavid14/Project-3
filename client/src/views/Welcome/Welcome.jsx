@@ -14,7 +14,6 @@ class Welcome extends Component {
   };
 
   componentDidMount() {
-    console.log('Welcome mounted');
     if (this.state.user) {
       API.getAllEmployeeFromUser(this.state.user.id).then(res => {
         this.setState({
@@ -39,7 +38,6 @@ class Welcome extends Component {
     this.setState({
       data: output
     });
-    console.log(this.state.data);
   }
 
   render() {

@@ -97,7 +97,7 @@ export {
   OurHeader,
   // Sidebar
   Sidebar,
-  //Snackbar
+  // Snackbar
   Snackbar,
   SnackbarContent,
   // Table
@@ -114,5 +114,5 @@ export {
   Warning,
   Danger,
   Small,
-  A
+  A,
 };

@@ -4,7 +4,6 @@ import Card from '../../components/SelectReportPage/Card/Card.jsx';
 
 class SelectReport extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="w3-content">
         <div className="w3-row-padding w3-center w3-margin-top">

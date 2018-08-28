@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     // Giving the Achieved model an description of type STRING
     description: {
       type: DataTypes.STRING,
-      allowNull: true
-    }
+      allowNull: true,
+    },
   });
 
   return Achieved;

@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     // Giving the Goal model a goals of type STRING
     goals: {
       type: DataTypes.STRING,
-      allowNull: true
-    }
+      allowNull: true,
+    },
   });
 
   // Goal.associate = function(models) {

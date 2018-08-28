@@ -38,7 +38,6 @@ class Tasks extends React.Component {
   };
   handleToggle = value => () => {
     let id = this.props.ids[value];
-    console.log("Toggling goal id: " + id);
     API.saveAchieved({
       description: this.props.tasks[value],
       EmployeeId: this.props.employee
@@ -61,9 +60,7 @@ class Tasks extends React.Component {
   };
   handleChangeGoal = () => {
     if(this.props.disable) {
-      console.log("Changing Achieved ID: " + this.state.currentId + " into " + this.state.currentGoal);
     } else {
-      console.log("Changing Goal ID: " + this.state.currentId + " into " + this.state.currentGoal);
       API.updateGoal(this.state.currentId, {
         goals: this.state.currentGoal
       })

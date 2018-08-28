@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     // Giving the Department model an departmentName of type String
     departmentName: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   });
 
   // Department.associate = function(models) {
@@ -19,4 +19,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Department;
 };
-

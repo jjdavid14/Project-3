@@ -28,7 +28,7 @@ export default {
   },
   // Gets the employee with the given id
   getEmployeeByName: function(first, last) {
-    return axios.get('/api/employee/name/' + first + "/" + last);
+    return axios.get('/api/employee/name/' + first + '/' + last);
   },
   // Updates an employee to the database
   updateEmployee: function(id, employeeData) {
@@ -76,7 +76,8 @@ export default {
   },
   // Gets all achieved goals within a specified date range by an Employee Id
   getAchievedWithinByEmployee: function(startDate, endDate, employeeId) {
-    return axios.get('/api/achieved/within/' + startDate + '/' + endDate + '/' + employeeId);
+    return axios.get('/api/achieved/within/' + startDate + '/'
+      + endDate + '/' + employeeId);
   },
   // Saves an achieved goal to the database
   saveAchieved: function(achievedData) {
@@ -100,7 +101,8 @@ export default {
   },
   // Gets all reviews within a specified date range by an Employee Id
   getReviewsWithinByEmployee: function(startDate, endDate, employeeId) {
-    return axios.get('/api/review/within/' + startDate + '/' + endDate + '/' + employeeId);
+    return axios.get('/api/review/within/' + startDate
+      + '/' + endDate + '/' + employeeId);
   },
   // Saves a review to the database
   saveReview: function(reviewData) {
@@ -109,5 +111,5 @@ export default {
   // Deletes the review with the given id
   deleteReview: function(id) {
     return axios.delete('/api/review/' + id);
-  }
+  },
 };

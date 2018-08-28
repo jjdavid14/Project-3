@@ -52,7 +52,6 @@ class Card extends Component {
 
     render() {
       const { classes } = this.props;
-      console.log(this.props);
         return (
             <div className="w3-half key={this.props.key}">
                 <div className="w3-card w3-white w3-container">

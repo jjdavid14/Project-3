@@ -24,8 +24,6 @@ class Header extends Component {
   }
 
 	render() {
-		console.log(this);
-		console.log("Employees: ", this.props.employees);
 		return (
 			<header className="w3-panel w3-center w3-opacity">
 			  <h1 className="w3-xxlarge">Welcome {this.state.displayName}!</h1>

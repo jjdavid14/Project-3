@@ -25,8 +25,6 @@ class Signup extends Component {
 
   getUserId(firebaseUser) {
     API.getUser(firebaseUser).then(res => {
-      console.log('API returns:');
-      console.log(res);
       sessionStorage.setItem('user', JSON.stringify(res.data[0]));
       this.props.history.push('/');
     });
@@ -34,7 +32,6 @@ class Signup extends Component {
 
   // Handles updating component state when the user types into the input field
   handleInputChange(event) {
-    console.log('changing');
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -60,7 +57,6 @@ class Signup extends Component {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(result => {
-        console.log('CUSTOM REGISTER');
         const user = result;
         this.setState({
           user
@@ -94,10 +90,10 @@ class Signup extends Component {
                       <div className="header header-primary text-center">
                         <h4>Sign Up</h4>
                         <div className="social-line">
-                          <Button justIcon link>
+                          <Button disabled justIcon link>
                             <i className="fa fa-facebook-square" />
                           </Button>
-                          <Button justIcon link>
+                          <Button disabled justIcon link>
                             <i className="fa fa-twitter" />
                           </Button>
                           <Button justIcon link onClick={this.login}>

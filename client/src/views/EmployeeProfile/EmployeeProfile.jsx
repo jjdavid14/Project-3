@@ -42,12 +42,8 @@ class EmployeeProfile extends Component {
 
   componentDidMount() {
     if (this.props.location.state.employeeIdSelected) {
-      console.log(
-        'Getting Employee ID: ' + this.props.location.state.employeeIdSelected
-      );
       API.getEmployee(this.props.location.state.employeeIdSelected).then(
         res => {
-          console.log(res);
           this.setState({
             manager: res.data.manager || '',
             department: res.data.department || '',
@@ -100,7 +96,6 @@ class EmployeeProfile extends Component {
       lastname: this.state.lastname
     })
       .then(res => {
-        console.log(res);
         this.showNotification("tc");
       })
       .catch(err => console.log(err));

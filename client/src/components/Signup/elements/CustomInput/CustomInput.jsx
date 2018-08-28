@@ -37,7 +37,6 @@ class CustomInput extends Component {
 
   renderFormControl() {
     const { type, placeholder } = this.props;
-    console.log(this.props);
 
     return (
       <FormControl

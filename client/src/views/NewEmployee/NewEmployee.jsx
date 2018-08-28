@@ -31,7 +31,6 @@ class NewEmployee extends Component {
   // When the component mounts, load the current manager(User model) and save them to this.state.manager
   // Also save the User ID to this.state.userId
   componentDidMount() {
-    console.log(this.state.user);
     if (this.state.user) {
       this.setState({
         companyName: this.state.user.companyName || '',
@@ -60,7 +59,6 @@ class NewEmployee extends Component {
     if (fnError && lnError && eError && cError && mError && dError) {
       return true;
     } else {
-      console.log('Please complete all fields of the form.');
       this.showNotification("tc");
     }
   };
@@ -156,7 +154,6 @@ class NewEmployee extends Component {
     if (this.isValid()) {
       if (this.state.goals) {
         goalArray = this.state.goals.split(',');
-        console.log(goalArray);
       }
       API.saveEmployee({
         company: this.state.companyName,
@@ -171,7 +168,6 @@ class NewEmployee extends Component {
           this.setState({
             employeeId: res.data.id
           });
-          console.log(res);
           if(goalArray) {
             goalArray.forEach(goal => {
               API.saveGoal({
@@ -179,7 +175,6 @@ class NewEmployee extends Component {
                 EmployeeId: this.state.employeeId
               })
                 .then(res => {
-                  console.log(res);
                   this.props.history.push("/welcome");
                 })
                 .catch(err => console.log(err));

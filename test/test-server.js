@@ -16,7 +16,7 @@ describe('Users', function() {
     email: 'demo@email.com',
     firstname: 'Java',
     lastname: 'Script',
-    firebaseId: 'firebasedemo'
+    firebaseId: 'firebasedemo',
   };
 
   // Test retrieving all Users
@@ -92,7 +92,7 @@ describe('Users', function() {
       .post('/api/user/' + newUser.id)
       .send({
         firstname: 'Super',
-        lastname: 'Man'
+        lastname: 'Man',
       })
       .end(function(error, response) {
         response.should.have.status(200);
@@ -150,7 +150,7 @@ describe('Employees', function() {
     email: 'demo@email.com',
     firstname: 'Java',
     lastname: 'Script',
-    firebaseId: 'firebasedemo'
+    firebaseId: 'firebasedemo',
   };
 
   // This newEmployee object will be used for testing of Create, Update, and Delete
@@ -158,7 +158,7 @@ describe('Employees', function() {
     firstname: 'New',
     lastname: 'Guy',
     email: 'employee@mail.com',
-    manager: 'Java'
+    manager: 'Java',
   };
 
   // Create our User to store the new Employee
@@ -254,7 +254,7 @@ describe('Employees', function() {
       .post('/api/employee/' + newEmployee.id)
       .send({
         firstname: 'Super',
-        lastname: 'Man'
+        lastname: 'Man',
       })
       .end(function(error, response) {
         response.should.have.status(200);
@@ -323,7 +323,7 @@ describe('Reviews', function() {
     email: 'demo@email.com',
     firstname: 'Java',
     lastname: 'Script',
-    firebaseId: 'firebasedemo'
+    firebaseId: 'firebasedemo',
   };
 
   // This will be our temporary Employee so that we can store a Review under this Employee
@@ -331,7 +331,7 @@ describe('Reviews', function() {
     firstname: 'New',
     lastname: 'Guy',
     email: 'employee@mail.com',
-    manager: 'Java'
+    manager: 'Java',
   };
 
   // This newReview object will be used for testing of Create, Update, and Delete
@@ -341,7 +341,7 @@ describe('Reviews', function() {
     professionalism: 1,
     communication: 2,
     taskcompletion: 1,
-    quality: 1
+    quality: 1,
   };
 
   // Create our User to store the demo Employee
@@ -472,7 +472,7 @@ describe('Reviews', function() {
       .request(server)
       .post('/api/review/' + newReview.id)
       .send({
-        appearance: 1
+        appearance: 1,
       })
       .end(function(error, response) {
         response.should.have.status(200);
@@ -531,7 +531,7 @@ describe('Goal', function() {
     email: 'demo@email.com',
     firstname: 'Java',
     lastname: 'Script',
-    firebaseId: 'firebasedemo'
+    firebaseId: 'firebasedemo',
   };
 
   // This will be our temporary Employee so that we can store a Review under this Employee
@@ -539,13 +539,13 @@ describe('Goal', function() {
     firstname: 'New',
     lastname: 'Guy',
     email: 'employee@mail.com',
-    manager: 'Java'
+    manager: 'Java',
   };
 
   // This newGoal object will be used for testing of Create, Update, and Delete
   let newGoal = {
     goals: 'Git gud',
-    achieved: 'Git pulled'
+    achieved: 'Git pulled',
   };
 
   // Create our User to store the demo Employee
@@ -660,7 +660,7 @@ describe('Goal', function() {
       .request(server)
       .post('/api/goal/' + newGoal.id)
       .send({
-        goals: 'Git push'
+        goals: 'Git push',
       })
       .end(function(error, response) {
         response.should.have.status(200);

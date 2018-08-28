@@ -10,7 +10,7 @@ export default class HeaderSection extends Component {
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'top center'
+          backgroundPosition: 'top center',
         }}
       />
     );
@@ -18,5 +18,5 @@ export default class HeaderSection extends Component {
 }
 
 HeaderSection.propTypes = {
-  backgroundImage: PropTypes.string
+  backgroundImage: PropTypes.string,
 };

@@ -27,8 +27,6 @@ class CustomTable extends Component {
     let employeeId = obj[0];
     API.deleteEmployee(employeeId)
       .then(res => {
-        console.log("Delete successful");
-        console.log(this.props);
         //this.props.history.push("/");
       });
   }

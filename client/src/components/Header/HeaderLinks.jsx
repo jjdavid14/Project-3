@@ -31,11 +31,9 @@ class HeaderLinks extends React.Component {
       let names = this.state.searchField.split(' ');
       API.getEmployeeByName(names[0], names[1])
         .then(res => {
-          console.log(res);
           if(res.data.length === 0) {
             this.showNotification("tc");
           } else {
-            console.log(res.data);
             this.setState({redirect: true, employeeIdSelected: res.data[0].id});
           }
         });
@@ -58,7 +56,6 @@ class HeaderLinks extends React.Component {
   render() {
     const { classes } = this.props;
     if (this.state.redirect) {
-      console.log(this.state);
       return <Redirect push to={{pathname: "/employee-profile", state: {employeeIdSelected: this.state.employeeIdSelected}}}  />;
     }
     return (

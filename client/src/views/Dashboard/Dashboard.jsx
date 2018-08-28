@@ -42,7 +42,6 @@ class Dashboard extends React.Component {
     for(let i = 1; i <= 12; i++) {
       API.getAchievedWithin("2018-" + i + "-01 00:00:00", "2018-" + i + "-28 00:00:00")
         .then(res => {
-          //console.log(res.data);
           seriesData[i-1] = (res.data.length);
           if(res.data.length >= completedTasksChart.options.high) {
             completedTasksChart.options.high = res.data.length + 1;
@@ -61,7 +60,6 @@ class Dashboard extends React.Component {
     for(let i = 1; i <= 12; i++) {
       API.getAchievedWithinByEmployee("2018-" + i + "-01 00:00:00", "2018-" + i + "-28 00:00:00", employeeId)
         .then(res => {
-          //console.log(res.data);
           seriesData[i-1] = (res.data.length);
           if(res.data.length >= completedTasksChart.options.high) {
             completedTasksChart.options.high = res.data.length + 1;
@@ -106,10 +104,8 @@ class Dashboard extends React.Component {
       API.getReviewsWithin("2018-" + i + "-01 00:00:00", "2018-" + i + "-28 00:00:00")
         .then(res => {
           /* eslint-enable */
-          console.log(res.data);
           reviewCount = res.data.length;
           sumArray = res.data.map(review => {
-            console.log(review);
             return (
                   (review.appearance) + 
                   (review.attendance) + 
@@ -119,9 +115,7 @@ class Dashboard extends React.Component {
                   (review.taskcompletion)
                   ) / 6;
           });
-          console.log(sumArray);
           averageSum = sumArray.reduce((a, b) => {return a + b}, 0);
-          console.log(averageSum);
           if(reviewCount > 0) {
             seriesData[i-1] = (averageSum/reviewCount);
           } else {
@@ -149,10 +143,8 @@ class Dashboard extends React.Component {
       API.getReviewsWithinByEmployee("2018-" + i + "-01 00:00:00", "2018-" + i + "-28 00:00:00", employeeId)
         .then(res => {
           /* eslint-enable */
-          console.log(res.data);
           reviewCount = res.data.length;
           sumArray = res.data.map(review => {
-            console.log(review);
             return (
                   (review.appearance) + 
                   (review.attendance) + 
@@ -162,17 +154,13 @@ class Dashboard extends React.Component {
                   (review.taskcompletion)
                   ) / 6;
           });
-          console.log(sumArray);
           averageSum = sumArray.reduce((a, b) => {return a + b}, 0);
-          console.log(averageSum);
-          console.log(reviewCount);
           if(reviewCount > 0) {
             seriesData[i-1] = (averageSum/reviewCount);
           } else {
             seriesData[i-1] = (0);
           }
           if(i === 12) {
-            console.log(seriesData);
             this.setState({
               averageReviewsSeries: [seriesData]
             });
@@ -184,7 +172,6 @@ class Dashboard extends React.Component {
   getPerformanceTrend = () => {
     API.getAllReviews()
       .then(res => {
-        console.log(res);
         if(res.data.length === 0) {
           return;
         } 
@@ -198,7 +185,6 @@ class Dashboard extends React.Component {
   getPerformanceTrendEmployee = (employeeId) => {
     API.getEmployeeReviews(employeeId)
       .then(res => {
-        console.log(res);
         if(res.data.length === 0) {
           return;
         } 
@@ -211,13 +197,11 @@ class Dashboard extends React.Component {
 
   componentWillMount = () => {
     if(this.props.location.state.id) {
-      console.log("Getting Employee Data");
       this.getPerformanceTrendEmployee(this.props.location.state.id);
       this.getAverageReviewsEmployee(this.props.location.state.id);
       this.getCompletedGoalsEmployee(this.props.location.state.id);
       this.getEmployeeName(this.props.location.state.id);
     } else {
-      console.log("Getting All Data");
       this.getCompletedGoals();
       this.getAverageReviews();
       this.getPerformanceTrend();
@@ -226,7 +210,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     completedTasksChart.data.series = this.state.monthlyGoalsSeries;
     emailsSubscriptionChart.data.series = this.state.averageReviewsSeries;
     dailySalesChart.data.series = this.state.performanceTrendSeries;

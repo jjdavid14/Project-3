@@ -15,13 +15,13 @@ module.exports = {
   findOne: function(req, res) {
     db.User.findOrCreate({
       where: {
-        firebaseId: req.body.uid
+        firebaseId: req.body.uid,
       },
       defaults: {
         username: req.body.email,
         password: req.body.uid,
-        email: req.body.email
-      }
+        email: req.body.email,
+      },
     })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -33,16 +33,16 @@ module.exports = {
   },
   update: function(req, res) {
     db.User.update(req.body, {
-      where: { id: req.params.id }
+      where: {id: req.params.id},
     })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.User.destroy({
-      where: { id: req.params.id }
+      where: {id: req.params.id},
     })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
 };

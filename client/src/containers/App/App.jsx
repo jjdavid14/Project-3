@@ -49,13 +49,10 @@ class App extends React.Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   componentDidMount() {
-    console.log(this.state.user);
     if (!this.state.user) {
       this.props.history.push('/landing');
     } else {
-      console.log(this.state.user.id);
       API.getAllEmployeeFromUser(this.state.user.id).then(res => {
-        console.log(res);
         this.setState({
           employees: res.data
         });
@@ -79,7 +76,6 @@ class App extends React.Component {
   }
 
   logout() {
-    console.log('Logging out');
     auth.signOut().then(() => {
       sessionStorage.clear();
       this.setState({

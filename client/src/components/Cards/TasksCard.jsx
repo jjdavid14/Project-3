@@ -21,8 +21,6 @@ import tasksCardStyle from "./../../variables/styles/tasksCardStyle";
 class TasksCard extends React.Component {
   constructor(props) {
     super();
-    console.log("TASKS");
-    console.log(props);
     this.state = {
       value: 0,
       employeeId: props.employee,
@@ -38,7 +36,6 @@ class TasksCard extends React.Component {
     if(this.state.employeeId) {
       API.getEmployeeGoals(this.state.employeeId)
         .then(res => {
-          console.log("Got Goals!");
           let goalArray = res.data.map(goal => {
             return goal.goals;
           });
@@ -49,10 +46,6 @@ class TasksCard extends React.Component {
           let goalIdArray = res.data.map(goal => {
             return goal.id;
           });
-          console.log("INDEX");
-          console.log(goalIndexes);
-          console.log("ARRAY");
-          console.log(goalArray);
           this.setState({
             goals: goalArray,
             goalIndex: goalIndexes,
@@ -62,8 +55,6 @@ class TasksCard extends React.Component {
 
         API.getEmployeeAchieved(this.state.employeeId)
         .then(res => {
-          console.log("Got Achieved Goals!");
-          console.log(res);
           let achievedArray = res.data.map(achieved => {
             return achieved.description;
           });
@@ -74,10 +65,6 @@ class TasksCard extends React.Component {
           let achievedIdArray = res.data.map(achieved => {
             return achieved.id;
           });
-          console.log("INDEX");
-          console.log(achievedIndexes);
-          console.log("ARRAY");
-          console.log(achievedArray);
           this.setState({
             achieved: achievedArray,
             achieveIndex: achievedIndexes,
@@ -88,10 +75,6 @@ class TasksCard extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log("NEXT");
-    console.log(nextProps);
-    console.log("THIS");
-    console.log(this.props);
     if(this.props.goalCount !== nextProps.goalCount) {
       this.updateTaskCard();
     }
@@ -104,7 +87,6 @@ class TasksCard extends React.Component {
     if(this.state.employeeId) {
       API.getEmployeeGoals(this.state.employeeId)
         .then(res => {
-          console.log("Got Goals!");
           let goalArray = res.data.map(goal => {
             return goal.goals;
           });
@@ -115,10 +97,6 @@ class TasksCard extends React.Component {
           let goalIdArray = res.data.map(goal => {
             return goal.id;
           });
-          console.log("INDEX");
-          console.log(goalIndexes);
-          console.log("ARRAY");
-          console.log(goalArray);
           this.setState({
             goals: goalArray,
             goalIndex: goalIndexes,
@@ -128,8 +106,6 @@ class TasksCard extends React.Component {
 
         API.getEmployeeAchieved(this.state.employeeId)
         .then(res => {
-          console.log("Got Achieved Goals!");
-          console.log(res);
           let achievedArray = res.data.map(achieved => {
             return achieved.description;
           });
@@ -140,10 +116,6 @@ class TasksCard extends React.Component {
           let achievedIdArray = res.data.map(achieved => {
             return achieved.id;
           });
-          console.log("INDEX");
-          console.log(achievedIndexes);
-          console.log("ARRAY");
-          console.log(achievedArray);
           this.setState({
             achieved: achievedArray,
             achieveIndex: achievedIndexes,
